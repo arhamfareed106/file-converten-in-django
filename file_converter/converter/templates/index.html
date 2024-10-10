@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+
+    <!-- Load static files -->
+    {% load static %}
+
+    <!-- Link to the stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>File Converter</h1>
+        <form id="fileForm" action="{% url 'convert_file' %}" method="POST" enctype="multipart/form-data">
+            <!-- CSRF token for form security -->
+            {% csrf_token %}
+            <h2>Convert Your File</h2>
+
+            <!-- File upload input -->
+            <label for="fileInput" class="custom-file-label">Choose a file</label>
+            <input type="file" id="fileInput" name="file" class="custom-file-input" required>
+
+            <!-- Dropdown to select file format -->
+            <label for="format">Convert to:</label>
+            <select id="format" name="format" required>
+                <option value="pdf">PDF</option>
+                <option value="txt">TXT</option>
+            </select>
+
+            <!-- Submit button -->
+            <button type="submit">Convert Now</button>
+        </form>
+
+        <!-- Result section to show the converted file details or errors -->
+        <div id="result"></div>
+    </div>
+
+    <!-- GSAP animation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+
+    <!-- Link to your custom JavaScript -->
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

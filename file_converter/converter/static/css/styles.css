@@ -1,0 +1,120 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Gradient background */
+}
+
+/* Main Container */
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+/* Title */
+.container h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Custom File Input */
+.custom-file-input {
+    display: none; /* Hide the default file input */
+}
+
+.custom-file-label {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3;
+}
+
+/* File input label margin */
+#fileInput {
+    margin-bottom: 15px;
+}
+
+/* Select and Button Styling */
+select, button {
+    display: block;
+    width: 100%;
+    margin: 15px 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+}
+
+select {
+    background-color: #f9f9f9;
+    border-color: #ccc;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-3px); /* Add subtle lift effect on hover */
+}
+
+button:active {
+    transform: translateY(0); /* Revert lift effect when clicked */
+}
+
+/* Input Focus and Hover States */
+input:focus, select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Responsive Enhancements for Smaller Screens */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    input, select, button {
+        font-size: 14px;
+    }
+}
+
+/* Extra Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    input, select, button {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
